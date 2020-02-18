@@ -20,7 +20,7 @@ public:
 
 private slots:
     void updateTime();
-    void buttonFromGroupClicked(QAbstractButton *btn);
+    void buttonFromGroupClicked(int);
 
 private:
     Ui::MainWindow *ui;
