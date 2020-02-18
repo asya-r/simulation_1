@@ -16,15 +16,11 @@ const QString RED = "background-color: rgb(212, 83, 83)";
 const QString BROWN = "background-color: rgb(143, 89, 2)";
 
 int timer = 0;
-const int PERIOD = 5;
+int period = 0;
 
 QButtonGroup *btns = new QButtonGroup();
 
 map<int, int> btn_sec = {
-    { 0, 0 },
-    { 1, 0 },
-    { 2, 0 },
-    { 3, 0 }
 };
 
 MainWindow::MainWindow(QWidget *parent)
@@ -33,11 +29,26 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-//    QButtonGroup *btns = new QButtonGroup();
+    for (int i = 0; i < 16; i++){
+        btn_sec[i] = 0;
+    }
+
     btns->addButton(ui->pushButton, 0);
     btns->addButton(ui->pushButton_2, 1);
     btns->addButton(ui->pushButton_3, 2);
     btns->addButton(ui->pushButton_4, 3);
+    btns->addButton(ui->pushButton_5, 4);
+    btns->addButton(ui->pushButton_6, 5);
+    btns->addButton(ui->pushButton_7, 6);
+    btns->addButton(ui->pushButton_8, 7);
+    btns->addButton(ui->pushButton_9, 8);
+    btns->addButton(ui->pushButton_10, 9);
+    btns->addButton(ui->pushButton_11, 10);
+    btns->addButton(ui->pushButton_12, 11);
+    btns->addButton(ui->pushButton_13, 12);
+    btns->addButton(ui->pushButton_14, 13);
+    btns->addButton(ui->pushButton_15, 14);
+    btns->addButton(ui->pushButton_16, 15);
 
     connect(btns, SIGNAL(buttonClicked(int)), SLOT(buttonFromGroupClicked(int)));
 
@@ -68,7 +79,7 @@ void MainWindow::buttonFromGroupClicked(int id){
         ui->label->setText(QString::number(money+5));
     }
     else if (btn->styleSheet() == BROWN && money >= 1){
-        btn->setStyleSheet(BLACK);
+        btn->setStyleSheet(WHITE);
         ui->label->setText(QString::number(money-1));
     }
 }
@@ -98,9 +109,16 @@ void MainWindow::updateTime()
 
     timer++;
     ui->label_2->setText(QString::number(timer));
-    for (int i = 0; i < 4; i++){
-        if (timer - btn_sec[i] > PERIOD){
+    for (int i = 0; i < 16; i++){
+        if (timer - btn_sec[i] > period){
             update_color(i);
         }
+    }
+}
+
+void MainWindow::on_pushButton_17_clicked()
+{
+    if (ui->spinBox->value() > 1 && period == 0){
+        period = ui->spinBox->value();
     }
 }

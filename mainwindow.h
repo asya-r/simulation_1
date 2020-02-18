@@ -22,6 +22,8 @@ private slots:
     void updateTime();
     void buttonFromGroupClicked(int);
 
+    void on_pushButton_17_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTimer *tmr;
