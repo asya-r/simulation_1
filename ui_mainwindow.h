@@ -47,7 +47,9 @@ public:
     QPushButton *pushButton_15;
     QPushButton *pushButton_16;
     QSpinBox *spinBox;
-    QPushButton *pushButton_17;
+    QLabel *label_3;
+    QLabel *label_4;
+    QLabel *label_5;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -55,7 +57,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(800, 600);
+        MainWindow->resize(705, 509);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         pushButton = new QPushButton(centralwidget);
@@ -76,10 +78,10 @@ public:
         pushButton_4->setStyleSheet(QStringLiteral("background-color: rgb(238, 238, 236)"));
         label = new QLabel(centralwidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(510, 110, 111, 61));
+        label->setGeometry(QRect(580, 140, 41, 17));
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(510, 190, 67, 17));
+        label_2->setGeometry(QRect(580, 210, 67, 17));
         pushButton_5 = new QPushButton(centralwidget);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
         pushButton_5->setGeometry(QRect(390, 140, 90, 90));
@@ -130,14 +132,21 @@ public:
         pushButton_16->setStyleSheet(QStringLiteral("background-color: rgb(238, 238, 236)"));
         spinBox = new QSpinBox(centralwidget);
         spinBox->setObjectName(QStringLiteral("spinBox"));
-        spinBox->setGeometry(QRect(510, 50, 42, 26));
-        pushButton_17 = new QPushButton(centralwidget);
-        pushButton_17->setObjectName(QStringLiteral("pushButton_17"));
-        pushButton_17->setGeometry(QRect(560, 50, 89, 25));
+        spinBox->setGeometry(QRect(610, 67, 42, 26));
+        spinBox->setValue(3);
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(510, 70, 91, 17));
+        label_4 = new QLabel(centralwidget);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(510, 140, 67, 17));
+        label_5 = new QLabel(centralwidget);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(510, 210, 67, 17));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 705, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -169,7 +178,9 @@ public:
         pushButton_14->setText(QString());
         pushButton_15->setText(QString());
         pushButton_16->setText(QString());
-        pushButton_17->setText(QApplication::translate("MainWindow", "ok", Q_NULLPTR));
+        label_3->setText(QApplication::translate("MainWindow", "Period (sec):", Q_NULLPTR));
+        label_4->setText(QApplication::translate("MainWindow", "Money:", Q_NULLPTR));
+        label_5->setText(QApplication::translate("MainWindow", "Time:", Q_NULLPTR));
     } // retranslateUi
 
 };

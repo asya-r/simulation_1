@@ -16,7 +16,7 @@ const QString RED = "background-color: rgb(212, 83, 83)";
 const QString BROWN = "background-color: rgb(143, 89, 2)";
 
 int timer = 0;
-int period = 0;
+int period = 3;
 
 QButtonGroup *btns = new QButtonGroup();
 
@@ -116,9 +116,7 @@ void MainWindow::updateTime()
     }
 }
 
-void MainWindow::on_pushButton_17_clicked()
+void MainWindow::on_spinBox_valueChanged(int arg1)
 {
-    if (ui->spinBox->value() > 1 && period == 0){
-        period = ui->spinBox->value();
-    }
+    period = arg1;
 }

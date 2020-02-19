@@ -21,8 +21,7 @@ public:
 private slots:
     void updateTime();
     void buttonFromGroupClicked(int);
-
-    void on_pushButton_17_clicked();
+    void on_spinBox_valueChanged(int arg1);
 
 private:
     Ui::MainWindow *ui;
